@@ -1,0 +1,377 @@
+
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+	height:100%;
+	width:100%;
+	margin:0;padding:0;
+	font-family:helvetica;
+	-webkit-font-smoothing: antialiased;
+
+}
+
+#wrapper {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;left:0;
+	// overflow:hidden;
+
+	@include bp-mobile{
+		overflow:scroll;
+	}
+}
+
+#mask {
+	width:400%;
+	height:100%;
+	background-image:url(../img/sky.png);
+	@include background-image-big
+
+	@include bp-mobile{
+		width:100%;
+		background-image:url(../img/skyline-mobile.png);
+		@include background-image-small
+	}
+}
+
+.item {
+	width:25%;
+	height:100%;
+	float:left;
+	position:relative;
+	overflow: hidden;
+	border: solid blue 1px;
+
+	@include bp-mobile{
+		width:100%;
+		min-height:1000px;
+	}
+}
+	
+.content {
+	width:50%;
+	height:100%;
+		
+	margin:0 auto;
+		
+	float: left;
+	position:relative;
+	color:white;
+
+	@include bp-mobile {
+		width:100%;
+		height:50%;
+		min-height: 500px;
+	}
+}
+	
+.selected {
+	background:#fff;
+	font-weight:700;
+}
+
+.clear {
+	clear:both;
+}
+
+
+
+//TRUCK============================================================
+
+.tour-bus {
+	bottom: -35px;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+	width: 30%;
+	// border:solid black 1px;
+	z-index:999;
+
+	@include bp-mobile {
+		display:none;
+	}
+
+	@include bp-tablet {
+		width:45%;
+	}
+
+	@include bp-laptop {
+		width:40%;
+	}
+
+	@include bp-desktop {
+		width:30%;
+	}
+}
+
+.mobile-truck {
+	position:fixed;
+	z-index:999;
+	width:20%;
+	top:20px;
+	left:20px;
+}
+
+.truck {
+	top:0;
+	left:0;
+	width: 100%;
+	height:100%;
+}
+
+.wheels{
+	position:absolute;
+	top: 0;
+	left: 0;
+	width:7%;		
+}
+
+#wheel-1{
+	   top: 80%;
+	   left: 88.5%;		
+}
+
+#wheel-2{
+	top: 80%;
+	left: 61.5%;		
+}
+#wheel-3{
+	top: 80%;
+	left: 52.4%;		
+}
+#wheel-4{
+	top: 80%;
+	left: 22.7%;	
+}
+#wheel-5{
+	top: 80%;
+	left: 15.7%;
+}
+#wheel-6{
+	top: 80%;
+	left: 8.3%;	
+}
+//END TRUCK===========================================================
+
+//SKYLINES============================================================
+
+.skyline {
+	width: 100%;
+	position: absolute;		
+}
+
+.skyline__top-wichita { 
+	@include bp-mobile {
+	display:none;
+	}
+
+	@include bp-tablet{
+		top:13%;
+	}
+
+	@include bp-laptop{
+		top:7%;
+	}
+
+
+	@include bp-desktop{
+		top:0;
+	}
+}
+
+.skyline__top-atl { 
+	@include bp-mobile {
+	display:none;
+	}
+
+	@include bp-tablet{
+		top:7%;
+	}
+
+	@include bp-laptop{
+		top:0;
+	}
+
+
+	@include bp-desktop{
+		top:-60px;
+	}
+}
+
+.skyline__top-nashville { 
+	@include bp-mobile {
+	display:none;
+	}
+
+	@include bp-tablet{
+		top:9%;
+	}
+
+	@include bp-laptop{
+		top:2%;
+	}
+
+
+	@include bp-desktop{
+		top:-30px;
+	}
+}
+
+.skyline__top-austin { 
+	@include bp-mobile {
+	display:none;
+	}
+
+	@include bp-tablet{
+		top:6%;
+	}
+
+	@include bp-laptop{
+		top:8px;
+	}
+
+
+	@include bp-desktop{
+		top:-30px;
+	}
+}
+
+//END SKYLINE========================================================
+
+.billboard {
+	position: absolute;
+	width: 25%;
+	bottom: -65px;
+	left: 71%;
+	z-index:1000;
+
+	@include bp-mobile {
+		
+	 	width: 80%;
+		top: 375px;
+		left: 9%;
+
+	}
+
+	@include bp-tablet {
+		width:30%;
+		left: 65%;
+	}
+
+	@include bp-laptop {
+		width: 35%;
+		left: 61%;
+	}
+
+	@include bp-desktop {
+		width:30%;
+		left: 65%;
+	}
+}
+
+.hover-state {
+	@include brightness;
+	cursor:pointer;
+}
+
+.quote {
+
+	position: absolute;
+	width: 21%;
+	top: 0px;
+	left: 74%;
+	cursor: pointer;
+	z-index: 5;
+
+	@include bp-tablet {
+		width:25%;
+		top: 140px;
+		left: 67%;
+	}
+
+	@include bp-laptop {
+		width:30%;
+		top: 40px;
+		left: 65%;
+	}
+
+	@include bp-desktop {
+		width: 30%;
+		top: 10px;
+	}
+}
+
+.poster {
+	position: absolute;
+	width: 35%;
+	top: 75%;
+	left: 55%;
+	transform:translate(-50%,-50%);
+	cursor: pointer;
+	z-index:1;
+
+	@include bp-tablet {
+		width:25%;
+	}
+
+	@include bp-laptop {
+		top: 65%;
+		width: 46%;
+	}
+
+	@include bp-desktop {
+		width:30%;
+	}
+}
+
+.album {
+	position: absolute;
+	width: 20%;
+	top: 75%;
+	left: 62%;
+	transform:translate(-50%,-50%);
+	cursor: pointer;
+	z-index:0;
+
+	@include bp-tablet {
+		width:25%;
+	}
+
+	@include bp-laptop {
+		top: 41%;
+	width: 18%;
+	}
+
+	@include bp-desktop {
+		width:30%;
+	}
+}
+
+.sticks {
+	width:50%;
+		
+}
+
+
+.video {
+	width: 40%;
+	position: absolute;
+	top: 280px;
+	left: 1%;
+	transform: rotate(-10deg);
+}
+
+
+
+
